@@ -1,0 +1,90 @@
+##########
+# DEM    #
+##########
+
+dem = @INPUT_DIR@/Elevation.nc?Band1
+
+aoi = @INPUT_DIR@/aoi_BGFLOOD_mod.txt
+dx = 128.000000
+
+##############
+# Forcing    #
+##############
+
+zsoffset = 0.000000
+zsinit = -1.000000
+frictionmodel = 1
+cfmap = @INPUT_DIR@/Roughness.nc?Band1
+
+rainfile = @INPUT_DIR@/gabrielle/Rainfall_depth.nc?depth
+
+###############
+# Adaptation  #
+###############
+
+initlevel = 0
+Adaptation = Targetlevel,@INPUT_DIR@/Adapt.nc
+minlevel = 0
+maxlevel = 0
+
+################
+# Boundaries   #
+################
+
+left = 0;
+right = @INPUT_DIR@/gabrielle/tide_Gisborne_96h.txt,2;
+top = 0;
+bot = @INPUT_DIR@/gabrielle/tide_Gisborne_96h.txt,2;
+
+#############
+# Timing    #
+#############
+
+bndtaper = 7200.000000
+
+reftime = 2023-02-11T22:00:00
+
+starttime = 2023-02-11T23:00:00
+
+outputtimestep = 3600.000000
+
+endtime = 2023-02-15T21:00:00
+
+#############
+# Others    #
+#############
+
+gpudevice = 0
+
+vmax = 10.000000
+
+#############
+# Output    #
+#############
+
+smallnc = 0
+
+savebyblk= false
+
+outvars = zs, u, v, h, zb, hmax, zsmax, U, hUmax, Umax;
+
+outfile = BGout.nc
+
+TSOutput=loc1.txt,2023150.9, 5741262.5;
+TSOutput=loc2.txt,2025478.9, 5731694.9;
+TSOutput=loc3.txt,2028019.291, 5710150.803;
+TSOutput=loc4.txt,2031143.0, 5742790.4;
+TSOutput=loc5.txt,2006135.0, 5723207.1;
+TSOutput=loc6.txt,2029686.069, 5735958.219;
+TSOutput=loc7.txt,2018791.3, 5741262.7;
+TSOutput=loc9.txt,2013102.95, 5732159.0;
+TSOutput=loc10.txt,2012294.9, 5736254.8;
+TSOutput=loc11.txt,2022927.0, 5712950.3;
+TSOutput=loc12.txt,2018683.7, 5698869.814;
+TSOutput=loc13.txt,2027311.946, 5707573.371;
+TSOutput=loc14.txt,2041159.461, 5711050.607;
+TSOutput=loc15.txt,2037768.476, 5708144.256;
+TSOutput=loc19.txt,2032525.438, 5712101.694;
+TSOutput=loc22.txt,2022572.0, 5735225.0;
+TSOutput=loc23.txt,2017457.0, 5733146.0;
+TSOutput=loc24.txt,2025115.0, 5732438.0;

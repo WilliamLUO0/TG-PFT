@@ -1,0 +1,56 @@
+TG-PFT
+Copyright 2026 Zihao Luo
+
+This product includes software developed by third parties. The original
+copyright and license notices are reproduced below.
+
+--------------------------------------------------------------------------------
+BasicSR (https://github.com/XPixelGroup/BasicSR)
+--------------------------------------------------------------------------------
+
+The training framework under basicsr/ is derived from BasicSR.
+
+Copyright 2018-2022 BasicSR Authors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+--------------------------------------------------------------------------------
+PFT-SR (https://github.com/LabShuHangGU/PFT-SR)
+--------------------------------------------------------------------------------
+
+basicsr/archs/tgpft_arch.py is built upon the Progressive Focused Transformer
+(PFT) implementation and has been modified for flood map downscaling.
+basicsr/models/pft_model.py and ops_smm/ are taken from PFT-SR; ops_smm/setup.py
+has been modified to add the sm_90 compilation target.
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+--------------------------------------------------------------------------------
+Residual-SwinUNet-for-Flood-Surrogate-Modeling
+(https://github.com/songwk0924/Residual-SwinUNet-for-Flood-Surrogate-Modeling)
+--------------------------------------------------------------------------------
+
+basicsr/archs/rswinunet_arch.py is adapted from this implementation and is
+distributed under the following license:
+
+MIT License
+
+Copyright (c) 2026 Wenke Song, Mingfu Guan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

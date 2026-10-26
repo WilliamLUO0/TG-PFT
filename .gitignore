@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Compiled CUDA extension (ops_smm)
+*.so
+*.pyd
+*.o
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Training / testing outputs
+experiments/
+results/
+tb_logger/
+wandb/
+*.log
+
+# Datasets and checkpoints
+datasets/
+dataset_*/
+*.npy
+*.nc
+*.tif
+*.tiff
+*.pth
+*.pt
+*.state

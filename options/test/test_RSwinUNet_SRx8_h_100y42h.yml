@@ -1,0 +1,166 @@
+# general settings
+name: RSwinUNet_SRx8_h_100y42h
+model_type: FMSRModel
+scale: 8
+num_gpu: 1
+manual_seed: 61
+
+# dataset and data loader settings
+datasets:
+  test_1:
+    name: FloodMapSR-Test-100y42h0c-h
+    type: PairedFloodMapDataset
+    dataroot: datasets/testdataset_100y42h0c
+    index_csv: datasets/testdataset_100y42h0c/index.csv
+    io_backend:
+      type: disk
+    phase: test
+    target_var: h
+    aux_vars: [zs, dem]
+    scale: 8
+    patch_fine: 512
+    patch_coarse: 64
+    split_cfg:
+      by: scenario
+      val_ratio: 0.2
+      seed: 61
+      split_stats_json: datasets/dataset_ds8_filtered_thr0p1_min5100_full/split_stats_h_asinh.json
+    stats:
+      h_asinh_q: 90
+
+# network structures
+network_g:
+  type: RSwinUNet
+  upscale: 8
+  img_size: 512
+  coarse_in_chans: 3
+  static_in_chans: 7
+  patch_size: 4
+  embed_dim: 96
+  depths: [2, 2, 2, 2]
+  depths_decoder: [1, 2, 2, 2]
+  num_heads: [3, 6, 12, 24]
+  window_size: 8
+  mlp_ratio: 4.0
+  drop_path_rate: 0.1
+  num_flood_classes: 3
+  coarse_upsample_mode: bilinear
+  use_checkpoint: false
+
+# path
+path:
+  pretrain_network_g: experiments/RSwinUNet_SRx8_h/models/net_g_1000000.pth
+  strict_load_g: true
+  param_key_g: params_ema
+
+# validation settings
+val:
+  save_flood_map: true
+  suffix: ~
+  metrics:
+    rmse:
+      type: cal_rmse_pt
+      reduction: mean
+      better: lower
+    nse:
+      type: cal_nse_pt
+      reduction: mean
+      better: higher
+    rmse_nonflood01:
+      type: cal_rmse_conditional_pt
+      reduction: none
+      cond_on_target_ge: 0.0
+      cond_on_target_lt: 0.1
+      better: lower
+    rmse_slight01_05:
+      type: cal_rmse_conditional_pt
+      reduction: none
+      cond_on_target_ge: 0.1
+      cond_on_target_lt: 0.5
+      better: lower
+    rmse_severe05_1:
+      type: cal_rmse_conditional_pt
+      reduction: none
+      cond_on_target_ge: 0.5
+      cond_on_target_lt: 1
+      better: lower
+    rmse_extreme1:
+      type: cal_rmse_conditional_pt
+      reduction: none
+      cond_on_target_ge: 1
+      cond_on_target_lt: ~
+      better: lower
+    csi_thr01:
+      type: cal_csi_pt
+      threshold: 0.1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    precision_thr01:
+      type: cal_precision_pt
+      threshold: 0.1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    recall_thr01:
+      type: cal_recall_pt
+      threshold: 0.1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    precision_nonflood01:
+      type: cal_precision_band_pt
+      band_ge: 0.0
+      band_lt: 0.1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    precision_slight01_05:
+      type: cal_precision_band_pt
+      band_ge: 0.1
+      band_lt: 0.5
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    precision_severe05_1:
+      type: cal_precision_band_pt
+      band_ge: 0.5
+      band_lt: 1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    precision_extreme1:
+      type: cal_precision_band_pt
+      band_ge: 1
+      band_lt: ~
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    recall_nonflood01:
+      type: cal_recall_band_pt
+      band_ge: 0.0
+      band_lt: 0.1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    recall_slight01_05:
+      type: cal_recall_band_pt
+      band_ge: 0.1
+      band_lt: 0.5
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    recall_severe05_1:
+      type: cal_recall_band_pt
+      band_ge: 0.5
+      band_lt: 1
+      reduction: mean
+      empty_as_nan: true
+      better: higher
+    recall_extreme1:
+      type: cal_recall_band_pt
+      band_ge: 1
+      band_lt: ~
+      reduction: mean
+      empty_as_nan: true
+      better: higher
