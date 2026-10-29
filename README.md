@@ -4,9 +4,11 @@
 
 [Zihao Luo](https://profiles.auckland.ac.nz/zihao-luo),
 [Zhonghou Xu](https://scholar.google.com/citations?user=uWjB9q8AAAAJ&hl=en),
-[Conrad Zorn](https://profiles.auckland.ac.nz/conrad-zorn),
+[Conrad Zorn](https://scholar.google.co.nz/citations?user=KfNIHngAAAAJ&hl=en&oi=ao),
 [Emily M. Lane](https://scholar.google.com/citations?user=Kka6oicAAAAJ&hl=en),
-[Jingfeng Zhang](https://scholar.google.com/citations?hl=en&user=NS0P1FkAAAAJ&view_op=list_works&sortby=pubdate)
+[Jingfeng Zhang](https://scholar.google.com/citations?hl=en&user=NS0P1FkAAAAJ&view_op=list_works&sortby=pubdate),
+[Yifan Yang](https://scholar.google.com.hk/citations?user=r95KMBUAAAAJ&hl=zh-CN&oi=sra),
+[Deidre M. Cleland](https://scholar.google.com/citations?user=6hKh3c4AAAAJ&hl=en)
 
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-AD1C18.svg?logo=arXiv)](https://arxiv.org/abs/XXXX.XXXXX)
 [![Python](https://img.shields.io/badge/Python-3.9-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
@@ -35,7 +37,7 @@ Flood warning and emergency response require timely, accurate, and spatially det
 ## 📑 Contents
 
 - [Installation](#-installation)
-- [Data and Trained Models](#-data-and-trained-models)
+- [Data and Pretrained Models](#-data-and-pretrained-models)
 - [Results](#-results)
 - [Repository Structure](#-repository-structure)
 - [Getting Started](#-getting-started)
@@ -85,13 +87,13 @@ conda create -n tgpft-data -c conda-forge python=3.10 geopandas rasterio rioxarr
 
 The same packages are listed in `requirements_data.txt`. `richdem` installs most reliably from conda-forge.
 
-## 📦 Data and Trained Models
+## 📦 Data and Pretrained Models
 
-**Dataset.** We release a public benchmark dataset of paired coarse- and fine-grid flood maps of the water depth and the flow velocities in the *x* and *y* directions at four downscaling factors. The flood maps are simulated by BG-Flood under spatially and temporally varying design rainfall and a time-varying mean high water spring tide. The dataset also includes the fine-grid topographic features and the flood scenarios used for the BG-Flood simulations.
+**Dataset.** We release a public benchmark dataset of paired coarse- and fine-grid flood maps of the water depth and the flow velocities in the *x* and *y* directions at four downscaling factors. The flood maps are simulated by BG-Flood under spatially and temporally varying design rainfall and a time-varying mean high water spring tide. The dataset also includes the fine-grid topographic features and the flood scenarios used for the BG-Flood simulations. It is available at https://doi.org/10.17608/k6.auckland.34803144.
 
 The flood maps are the BG-Flood outputs (`BGout.nc`), one file per simulation. Put the files in `INPUT_DIR` and `RESULTS_DIR` as in [Step 0](#step-0-bg-flood-simulations). Then skip Steps 0 and 1, and start from [Step 2](#step-2-projection-and-artifact-removal).
 
-**Trained models.** We also release the trained TG-PFTs:
+**Pretrained models.** We also release the pretrained TG-PFTs at https://doi.org/10.17608/k6.auckland.34849068:
 
 | Flood variable | Downscaling factor | Name |
 |:--|:--:|:--|
@@ -100,8 +102,6 @@ The flood maps are the BG-Flood outputs (`BGout.nc`), one file per simulation. P
 | Flow velocity in the *y* direction | 8 | `TGPFT_SRx8_v` |
 
 Put each model at `experiments/<name>/models/net_g_1000000.pth`, and you can go straight to [Step 7](#step-7-testing).
-
-Both will be available on Zenodo: *link coming soon*.
 
 ## 📊 Results
 
@@ -325,7 +325,7 @@ If you find this work useful, please cite:
 ```bibtex
 @article{luo2026tgpft,
   title   = {TG-PFT: A Topography-Guided Progressive Focused Transformer for Flood Map Downscaling},
-  author  = {Luo, Zihao and Xu, Zhonghou and Zorn, Conrad and Lane, Emily M. and Zhang, Jingfeng},
+  author  = {Luo, Zihao and Xu, Zhonghou and Zorn, Conrad and Lane, Emily M. and Zhang, Jingfeng and Yang, Yifan and Cleland, Deidre M.},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
 }
