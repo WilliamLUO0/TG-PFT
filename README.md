@@ -6,6 +6,7 @@
 [Zhonghou Xu](https://scholar.google.com/citations?user=uWjB9q8AAAAJ&hl=en),
 [Conrad Zorn](https://scholar.google.co.nz/citations?user=KfNIHngAAAAJ&hl=en&oi=ao),
 [Emily M. Lane](https://scholar.google.com/citations?user=Kka6oicAAAAJ&hl=en),
+[Trevor Carey-Smith](https://scholar.google.com/citations?hl=en&user=ryK6lHUAAAAJ&view_op=list_works&sortby=pubdate),
 [Jingfeng Zhang](https://scholar.google.com/citations?hl=en&user=NS0P1FkAAAAJ&view_op=list_works&sortby=pubdate),
 [Yifan Yang](https://scholar.google.com.hk/citations?user=r95KMBUAAAAJ&hl=zh-CN&oi=sra),
 [Deidre M. Cleland](https://scholar.google.com/citations?user=6hKh3c4AAAAJ&hl=en)
@@ -89,9 +90,16 @@ The same packages are listed in `requirements_data.txt`. `richdem` installs most
 
 ## 📦 Data and Pretrained Models
 
-**Dataset.** We release a public benchmark dataset of paired coarse- and fine-grid flood maps of the water depth and the flow velocities in the *x* and *y* directions at four downscaling factors. The flood maps are simulated by BG-Flood under spatially and temporally varying design rainfall and a time-varying mean high water spring tide. The dataset also includes the fine-grid topographic features and the flood scenarios used for the BG-Flood simulations. It is available at https://doi.org/10.17608/k6.auckland.34803144.
+**Dataset.** We release a public benchmark dataset of paired coarse- and fine-grid flood maps of the water depth and the flow velocities in the *x* and *y* directions at four downscaling factors. The flood maps are simulated by BG-Flood under spatially and temporally varying design rainfall and a time-varying mean high water spring tide. The dataset has two parts:
 
-The flood maps are the BG-Flood outputs (`BGout.nc`), one file per simulation. Put the files in `INPUT_DIR` and `RESULTS_DIR` as in [Step 0](#step-0-bg-flood-simulations). Then skip Steps 0 and 1, and start from [Step 2](#step-2-projection-and-artifact-removal).
+| Part | Content | DOI | License |
+|:--|:--|:--|:--|
+| Flood maps | BG-Flood outputs (`BGout.nc`), one file per simulation | https://doi.org/10.17608/k6.auckland.34803144 | CC BY-NC 4.0 |
+| Inputs | Fine-grid topographic features, flood scenarios, and the rainfall and storm tide of Cyclone Gabrielle | https://doi.org/10.17608/k6.auckland.34863750 | CC BY-NC-ND 4.0 |
+
+The flood maps are the shared intellectual property of the University of Auckland and Earth Sciences New Zealand (ESNZ). The inputs are ESNZ data.
+
+Put the inputs in `INPUT_DIR` and the flood maps in `RESULTS_DIR`, as in [Step 0](#step-0-bg-flood-simulations). Then skip Steps 0 and 1, and start from [Step 2](#step-2-projection-and-artifact-removal).
 
 **Pretrained models.** We also release the pretrained TG-PFTs at https://doi.org/10.17608/k6.auckland.34849068:
 
@@ -154,6 +162,7 @@ All flood simulations use [BG-Flood](https://github.com/CyprienBosserelle/BG_Flo
    INPUT_DIR/
    ├── Elevation.nc  Roughness.nc  aoi_BGFLOOD_mod.txt  Adapt.nc
    ├── tidebndpoly.bnd  tidebnd.nc
+   ├── Gisborne_basin.shp  .shx  .dbf  .prj  .cpg     # catchment boundary, the AOI
    ├── <scenario>/<scenario>_nztm.nc     # design rainfall, e.g. 100y_42h_0c/100y_42h_0c_nztm.nc
    └── gabrielle/Rainfall_depth.nc  gabrielle/tide_Gisborne_96h.txt
    ```
@@ -325,7 +334,7 @@ If you find this work useful, please cite:
 ```bibtex
 @article{luo2026tgpft,
   title   = {TG-PFT: A Topography-Guided Progressive Focused Transformer for Flood Map Downscaling},
-  author  = {Luo, Zihao and Xu, Zhonghou and Zorn, Conrad and Lane, Emily M. and Zhang, Jingfeng and Yang, Yifan and Cleland, Deidre M.},
+  author  = {Luo, Zihao and Xu, Zhonghou and Zorn, Conrad and Lane, Emily M. and Carey-Smith, Trevor and Zhang, Jingfeng and Yang, Yifan and Cleland, Deidre M.},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
 }
@@ -337,4 +346,4 @@ This code is built on [BasicSR](https://github.com/XPixelGroup/BasicSR) and [PFT
 
 ## 📄 License
 
-This project is released under the [Apache 2.0 License](LICENSE). Third-party code is credited in [NOTICE](NOTICE).
+This project is released under the [Apache 2.0 License](LICENSE). Third-party code is credited in [NOTICE](NOTICE). The two parts of the dataset have their own licenses, given in [Data and Pretrained Models](#-data-and-pretrained-models).
