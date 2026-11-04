@@ -93,12 +93,12 @@ The same packages are listed in `requirements_data.txt`. `richdem` installs most
 
 | Part | Content | DOI | License |
 |:--|:--|:--|:--|
-| Flood maps | BG-Flood outputs (`BGout.nc`), one file per simulation | https://doi.org/10.17608/k6.auckland.34803144 | CC BY-NC 4.0 |
-| Inputs | Fine-grid topographic features, flood scenarios, and the rainfall and storm tide of Cyclone Gabrielle | https://doi.org/10.17608/k6.auckland.34863750 | CC BY-NC-ND 4.0 |
+| Flood maps | BG-Flood outputs (`BGout.nc`), one file per simulation, with the design rainfall and the tide of the flood scenarios and the input files for running BG-Flood | https://doi.org/10.17608/k6.auckland.34803144 | CC BY-NC 4.0 |
+| Inputs | Fine-grid topographic features and the rainfall and storm tide of Cyclone Gabrielle, with a copy of the BG-Flood outputs of Cyclone Gabrielle | https://doi.org/10.17608/k6.auckland.34863750 | CC BY-NC-ND 4.0 |
 
-The flood maps are the shared intellectual property of the University of Auckland and Earth Sciences New Zealand (ESNZ). The inputs are ESNZ data.
+The flood maps are the shared intellectual property of the University of Auckland and Earth Sciences New Zealand (ESNZ). The DEM, the hydraulic roughness map, and the rainfall and storm tide of Cyclone Gabrielle are ESNZ data.
 
-Put the inputs in `INPUT_DIR` and the flood maps in `RESULTS_DIR`, as in [Step 0](#step-0-bg-flood-simulations). Then skip Steps 0 and 1, and start from [Step 2](#step-2-projection-and-artifact-removal).
+Extract the `.tar` files of both parts in one folder. This gives `input_files/` (`INPUT_DIR`) and `results/` (`RESULTS_DIR`), as in [Step 0](#step-0-bg-flood-simulations). Then skip Steps 0 and 1, and start from [Step 2](#step-2-projection-and-artifact-removal).
 
 **Pretrained models.** We also release the pretrained TG-PFTs at https://doi.org/10.17608/k6.auckland.34849068:
 
@@ -112,7 +112,7 @@ Put each model at `experiments/<name>/models/net_g_1000000.pth`, and you can go 
 
 ## 📊 Results
 
-All result tables of the paper and its Supporting Information are in [assets/results.md](assets/results.md).
+All result tables of the paper and its Supporting Information are in [assets/experimental_results.md](assets/experimental_results.md).
 
 ## 📂 Repository Structure
 
