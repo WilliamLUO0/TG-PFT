@@ -8,8 +8,7 @@
 [Emily M. Lane](https://scholar.google.com/citations?user=Kka6oicAAAAJ&hl=en),
 [Trevor Carey-Smith](https://scholar.google.com/citations?hl=en&user=ryK6lHUAAAAJ&view_op=list_works&sortby=pubdate),
 [Jingfeng Zhang](https://scholar.google.com/citations?hl=en&user=NS0P1FkAAAAJ&view_op=list_works&sortby=pubdate),
-[Yifan Yang](https://scholar.google.com.hk/citations?user=r95KMBUAAAAJ&hl=zh-CN&oi=sra),
-[Deidre M. Cleland](https://scholar.google.com/citations?user=6hKh3c4AAAAJ&hl=en)
+[Yifan Yang](https://scholar.google.com.hk/citations?user=r95KMBUAAAAJ&hl=zh-CN&oi=sra)
 
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-AD1C18.svg?logo=arXiv)](https://arxiv.org/abs/XXXX.XXXXX)
 [![Python](https://img.shields.io/badge/Python-3.9-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
@@ -334,7 +333,7 @@ If you find this work useful, please cite:
 ```bibtex
 @article{luo2026tgpft,
   title   = {TG-PFT: A Topography-Guided Progressive Focused Transformer for Flood Map Downscaling},
-  author  = {Luo, Zihao and Xu, Zhonghou and Zorn, Conrad and Lane, Emily M. and Carey-Smith, Trevor and Zhang, Jingfeng and Yang, Yifan and Cleland, Deidre M.},
+  author  = {Luo, Zihao and Xu, Zhonghou and Zorn, Conrad and Lane, Emily M. and Carey-Smith, Trevor and Zhang, Jingfeng and Yang, Yifan},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
 }
