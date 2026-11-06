@@ -239,22 +239,22 @@ Mean and sample standard deviation of the performance of TG-PFT for the water de
 
 ### Table S7
 
-Diagnostics of the flood maps of the 100-year test set at 28 h over the catchment and in the valley, floodplain, and urban windows of Figure 5 of the paper. The columns are defined in Text S7 of the Supporting Information.
+Diagnostics of the flood maps of the 100-year test set at 28 h over the Gisborne catchments and in the valley, floodplain, and urban windows of Figure 5 of the paper. The columns are defined in Text S7 of the Supporting Information.
 
 | Region | Flooded or flowing area (%)<br>Coarse | Flooded or flowing area (%)<br>Simulated | Flooded or flowing area (%)<br>Predicted | Mean simulated | CSI | RMSE | RMSE\* |
 |:--|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | **Water depth** (m) | | | | | | | |
-| Catchment | 7.7 | 7.9 | 7.6 | 1.72 | 0.928 | 0.069 | 0.244 |
+| Gisborne catchments | 7.7 | 7.9 | 7.6 | 1.72 | 0.928 | 0.069 | 0.244 |
 | Valley | 3.7 | 2.3 | 2.2 | 2.47 | 0.875 | 0.092 | 0.592 |
 | Floodplain | 16.7 | 41.2 | 38.9 | 1.98 | 0.939 | 0.128 | 0.199 |
 | Urban | 33.2 | 39.0 | 37.8 | 1.45 | 0.961 | 0.069 | 0.111 |
 | **Flow velocity in the *x* direction** (m/s) | | | | | | | |
-| Catchment | 3.8 | 5.0 | 4.6 | 0.76 | 0.830 | 0.061 | 0.264 |
+| Gisborne catchments | 3.8 | 5.0 | 4.6 | 0.76 | 0.830 | 0.061 | 0.264 |
 | Valley | 1.1 | 2.0 | 1.9 | 1.34 | 0.798 | 0.091 | 0.615 |
 | Floodplain | 6.3 | 26.6 | 23.5 | 0.58 | 0.823 | 0.090 | 0.171 |
 | Urban | 14.0 | 12.8 | 11.9 | 0.63 | 0.818 | 0.045 | 0.119 |
 | **Flow velocity in the *y* direction** (m/s) | | | | | | | |
-| Catchment | 4.1 | 5.5 | 5.1 | 0.88 | 0.852 | 0.064 | 0.265 |
+| Gisborne catchments | 4.1 | 5.5 | 5.1 | 0.88 | 0.852 | 0.064 | 0.265 |
 | Valley | 0.9 | 2.0 | 1.9 | 1.31 | 0.799 | 0.090 | 0.607 |
 | Floodplain | 6.4 | 29.8 | 26.8 | 0.85 | 0.861 | 0.096 | 0.174 |
 | Urban | 18.4 | 15.6 | 13.7 | 0.69 | 0.829 | 0.050 | 0.122 |
@@ -262,17 +262,17 @@ Diagnostics of the flood maps of the 100-year test set at 28 h over the catchmen
 | Region | Squared error (%)<br>Both | Squared error (%)<br>Simulated | Squared error (%)<br>Predicted | Within (%)<br>0.2 | Within (%)<br>0.5 | Bias (%) | Sign (%) | Flooded or flowing<br>cells (%)<br>Edge | Flooded or flowing<br>cells (%)<br>Near threshold |
 |:--|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | **Water depth** (m) | | | | | | | | | |
-| Catchment | 81 | 14 | 5 | 79.6 | 95.8 | −4.0 | – | 21.4 | 8.6 |
+| Gisborne catchments | 81 | 14 | 5 | 79.6 | 95.8 | −4.0 | – | 21.4 | 8.6 |
 | Valley | 86 | 11 | 3 | 36.9 | 69.2 | −6.3 | – | 59.4 | 5.5 |
 | Floodplain | 96 | 4 | 0 | 75.2 | 97.3 | −6.5 | – | 6.3 | 8.5 |
 | Urban | 89 | 9 | 2 | 95.3 | 99.1 | −2.8 | – | 9.4 | 7.0 |
 | **Flow velocity in the *x* direction** (m/s) | | | | | | | | | |
-| Catchment | 54 | 39 | 6 | 79.5 | 94.9 | −5.9 | 99.7 | 30.7 | 18.0 |
+| Gisborne catchments | 54 | 39 | 6 | 79.5 | 94.9 | −5.9 | 99.7 | 30.7 | 18.0 |
 | Valley | 70 | 26 | 4 | 42.5 | 76.0 | −8.0 | 97.9 | 63.7 | 8.9 |
 | Floodplain | 44 | 51 | 4 | 85.8 | 97.6 | −7.7 | 99.8 | 12.1 | 19.5 |
 | Urban | 60 | 27 | 6 | 92.7 | 99.2 | −4.6 | 99.9 | 17.6 | 31.9 |
 | **Flow velocity in the *y* direction** (m/s) | | | | | | | | | |
-| Catchment | 58 | 36 | 6 | 79.0 | 94.9 | −6.5 | 99.8 | 26.7 | 15.8 |
+| Gisborne catchments | 58 | 36 | 6 | 79.0 | 94.9 | −6.5 | 99.8 | 26.7 | 15.8 |
 | Valley | 69 | 27 | 4 | 43.6 | 75.1 | −9.5 | 97.6 | 64.8 | 9.2 |
 | Floodplain | 63 | 33 | 3 | 84.7 | 98.0 | −8.4 | 99.9 | 9.2 | 15.2 |
 | Urban | 65 | 26 | 4 | 92.5 | 99.2 | −6.2 | 100.0 | 14.1 | 34.6 |
